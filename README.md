@@ -1,4 +1,4 @@
-# Actividad 1_2
+# PROCESOS AVANZADOS
 
 1.	Crea un programa en Java que lea dos números desde la entrada estándar y visualice su suma. Controlar que lo introducido por teclado sean dos números enteros, en caso contrario el programa debe finalizar con valor 1 e indicar el error por la salida de error standard.
 
