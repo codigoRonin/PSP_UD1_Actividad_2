@@ -8,7 +8,10 @@
 
 4.	Crea un programa en Java que ejecute el Ejercicio 3 y muestre su resultado y su valor de salida.
 
-5.	Crea un programa en Java que lea una cadena de texto visualice por pantalla si esa cadena es o no un palíndromo (palabra o expresión que es igual si se lee de izquierda a derecha que de derecha a izquierda).NO se tienen en cuenta los espacios, signos de puntuación y tildes. En caso de recibir una cadena vacía debemos acabar la ejecución con valor -1 y mandar un mensaje de error por la salida de error estándar. 
+5.	Crea un programa en Java que lea una cadena de texto visualice por pantalla si esa cadena es o no un palíndromo (palabra o expresión que es igual si se lee de izquierda a derecha que de derecha a izquierda).
+
+        OJO no se tendrán en cuenta los espacios, signos de puntuación y tildes. 
+    En caso de recibir una cadena vacía debemos acabar la ejecución con valor -1 y mandar un mensaje de error por la salida de error estándar. 
 
 6.	Crea un programa en Java que ejecute el Ejercicio 5 y muestre su resultado y su valor de salida.
 
