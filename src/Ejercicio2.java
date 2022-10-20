@@ -28,12 +28,9 @@ public class Ejercicio2 {
 
             OutputStream outputStream = proceso.getOutputStream();
 
-            outputStream.write("2".getBytes());
-            outputStream.flush();
-          
+            outputStream.write("2\n".getBytes());
             outputStream.write("3".getBytes());  
             outputStream.flush();
-        
             outputStream.close();            
 
             int caracterUnicode;
@@ -46,13 +43,13 @@ public class Ejercicio2 {
 
             inputStream.close();
 
-            InputStream errorStream = proceso.getErrorStream();
+            // InputStream errorStream = proceso.getErrorStream();
 
-            while ((caracterUnicode = inputStream.read()) != -1) {
-                System.out.print((char) caracterUnicode);
-            }
+            // while ((caracterUnicode = inputStream.read()) != -1) {
+            //     System.out.print((char) caracterUnicode);
+            // }
 
-            errorStream.close();
+            // errorStream.close();
 
             try {
 
@@ -62,13 +59,10 @@ public class Ejercicio2 {
             } catch (InterruptedException interruptedException) {
                 interruptedException.printStackTrace();
             }
-            
-            
+                 
 
         } catch (IOException exception) {
-
             System.out.println("{program2 error: "+exception.getMessage()+"}");
-           
         }
 
     }

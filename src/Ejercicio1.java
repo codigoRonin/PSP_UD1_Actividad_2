@@ -18,18 +18,16 @@ public class Ejercicio1 {
         try {
 
             int numero1 = Integer.parseInt(solicitarNumero());
-            System.out.println("numero 1: "+numero1);
             int numero2 = Integer.parseInt(solicitarNumero());
-            System.out.println("numero 2: "+numero1);
-            
+                      
             System.out.println("El resultado es: " + sumarNumeros(numero1, numero2));
-            scanner.close();
+            //scanner.close();
 
             System.exit(0);
 
         } catch (InputMismatchException | ArrayIndexOutOfBoundsException exception) {
             System.out.println("error: " + exception.getMessage());
-            scanner.close();
+            //scanner.close();
             System.exit(1);
 
         }
@@ -38,7 +36,7 @@ public class Ejercicio1 {
 
     private static String solicitarNumero() {
 
-        System.out.println("Introduce un numero: ");
+        //System.out.println("Introduce un numero: ");
 
         return scanner.nextLine();
     }
