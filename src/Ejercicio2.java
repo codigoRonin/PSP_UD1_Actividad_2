@@ -15,9 +15,9 @@ public class Ejercicio2 {
      */
     public static void main(String[] args) {
         File file = new File(".\\bin");
-        Process proceso;
+        Process proceso = null;
 
-        ProcessBuilder processBuilder = new ProcessBuilder("java", "Ejercicio1", "sergio");
+        ProcessBuilder processBuilder = new ProcessBuilder("java", "Ejercicio1");
         processBuilder.directory(file);
 
         try {
@@ -26,7 +26,7 @@ public class Ejercicio2 {
             OutputStream outputStream = proceso.getOutputStream();
 
             outputStream.write("2".getBytes());
-            
+            outputStream.flush();
             outputStream.write("2".getBytes());
             
             outputStream.close();
