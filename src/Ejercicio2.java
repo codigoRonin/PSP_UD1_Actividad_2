@@ -14,46 +14,75 @@ public class Ejercicio2 {
      * de error.
      */
     public static void main(String[] args) {
+
         File file = new File(".\\bin");
         Process proceso = null;
 
         ProcessBuilder processBuilder = new ProcessBuilder("java", "Ejercicio1");
+
         processBuilder.directory(file);
 
         try {
+
             proceso = processBuilder.start();
 
             OutputStream outputStream = proceso.getOutputStream();
 
             outputStream.write("2".getBytes());
             outputStream.flush();
-            outputStream.write("2".getBytes());
-            
-            outputStream.close();
+          
+            outputStream.write("3".getBytes());  
+            outputStream.flush();
+        
+            outputStream.close();            
 
             int caracterUnicode;
 
             InputStream inputStream = proceso.getInputStream();
-
+    
             while ((caracterUnicode = inputStream.read()) != -1) {
                 System.out.print((char) caracterUnicode);
             }
 
             inputStream.close();
 
+            InputStream errorStream = proceso.getErrorStream();
+
+            while ((caracterUnicode = inputStream.read()) != -1) {
+                System.out.print((char) caracterUnicode);
+            }
+
+            errorStream.close();
+
             try {
 
-                int valorSalida = proceso.waitFor();//recogemos valor de salida de system.exit
+                int valorSalida = proceso.waitFor();
                 System.out.println("El valor de salida es: "+valorSalida);
-
+            
             } catch (InterruptedException interruptedException) {
                 interruptedException.printStackTrace();
             }
+            
+            
 
         } catch (IOException exception) {
 
-            exception.printStackTrace();
+            System.out.println("{program2 error: "+exception.getMessage()+"}");
+           
         }
+
     }
+
+    
+
+    // private static void mostrarTerminal(Process proceso) throws IOException {
+    //     int caracterUnicode;
+    //     InputStream inputStream = proceso.getInputStream();
+
+    //     while ((caracterUnicode = inputStream.read()) != -1) {
+    //         System.out.print((char) caracterUnicode);
+    //     }
+    //     inputStream.close();
+    // }
 
 }

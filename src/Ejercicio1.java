@@ -14,22 +14,22 @@ public class Ejercicio1 {
     private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-       
 
         try {
-            System.out.println("Introduce un numero 1");
-            int numero1 = Integer.parseInt(scanner.nextLine());
-            System.out.println("Introduce un numero 2");
-            int numero2 = Integer.parseInt(scanner.nextLine());
-            System.out.println("El resultado es: " + (numero1 + numero2));
 
-            //sumarNumeros(numero1, numero2);
+            int numero1 = Integer.parseInt(solicitarNumero());
+            System.out.println("numero 1: "+numero1);
+            int numero2 = Integer.parseInt(solicitarNumero());
+            System.out.println("numero 2: "+numero1);
+            
+            System.out.println("El resultado es: " + sumarNumeros(numero1, numero2));
+            scanner.close();
 
             System.exit(0);
 
         } catch (InputMismatchException | ArrayIndexOutOfBoundsException exception) {
             System.out.println("error: " + exception.getMessage());
+            scanner.close();
             System.exit(1);
 
         }
@@ -37,13 +37,16 @@ public class Ejercicio1 {
     }
 
     private static String solicitarNumero() {
-        System.out.println("Introduce un numero");
+
+        System.out.println("Introduce un numero: ");
+
         return scanner.nextLine();
     }
 
-    private static void sumarNumeros(int numero1, int numero2) {
+    private static int sumarNumeros(int numero1, int numero2) {
 
-        System.out.println("El resultado es: " + (numero1 + numero2));
+        return numero1 + numero2;
+
     }
 
 }
