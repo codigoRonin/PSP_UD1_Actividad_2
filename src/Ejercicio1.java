@@ -14,26 +14,38 @@ public class Ejercicio1 {
     private static Scanner scanner = new Scanner(System.in);
 
     public static void main(String[] args) {
-        
+        int numero1;
+        int numero2;
+
         try {
-            sumarNumeros(solicitarNumero(),solicitarNumero());
-            
-        } catch (InputMismatchException exception) {
-            System.out.println("Error: debes introducir un número entero");
+
+            // if (args.length != 0) {
+                numero1 = Integer.parseInt(args[0]);
+                numero2 = Integer.parseInt(args[1]);
+            // }else{
+            //     numero1 = solicitarNumero();
+            //     numero2 = solicitarNumero();
+            // }            
+
+            sumarNumeros(numero1, numero2);
+            System.exit(0);
+
+        } catch (InputMismatchException | ArrayIndexOutOfBoundsException exception) {
+            System.out.println("error: "+exception.getMessage());
             System.exit(1);
 
         }
-      
+
     }
 
-    private static int solicitarNumero(){
+    private static int solicitarNumero() {
         System.out.println("Introduce un numero");
         return scanner.nextInt();
     }
-    
-    private static void sumarNumeros(int numero1, int numero2){
 
-        System.out.println("El resultado es: " + (numero1+numero2));
+    private static void sumarNumeros(int numero1, int numero2) {
+
+        System.out.println("El resultado es: " + (numero1 + numero2));
     }
 
 }
