@@ -14,7 +14,9 @@ public class Ejercicio5 {
            frase2 += frase.charAt(j);
         }
         if(frase.equalsIgnoreCase(frase2)){
-            System.out.println("Es palindromo");
+            System.out.println("Es palíndromo");
+        }else{
+            System.out.println("No es palíndromo");
         }
     }
 }

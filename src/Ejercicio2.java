@@ -19,8 +19,9 @@ public class Ejercicio2 {
 
               //Introducimos la informacion que el proceso va recibir
               OutputStream outPutStream = proceso.getOutputStream();
-              outPutStream.write("15,15".getBytes());
-    
+              outPutStream.write("15\n".getBytes());
+              outPutStream.flush();
+              outPutStream.write("10".getBytes());
 
               outPutStream.flush();
               outPutStream.close();
@@ -37,6 +38,7 @@ public class Ejercicio2 {
             //Hacemos otro inputStream para leer en caso de que salga el error
             try {
                 int valorSalida = proceso.waitFor();
+                System.out.println("El valor de salida es");
                 System.out.println(valorSalida);
                 if (valorSalida != 0) {
                     InputStream errorSalida = proceso.getErrorStream();

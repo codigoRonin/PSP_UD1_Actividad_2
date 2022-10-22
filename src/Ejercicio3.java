@@ -13,7 +13,8 @@ public class Ejercicio3 {
             cadena2+=cadena;
 
         }
-        System.out.println(cadena2.toUpperCase().replace("*", " "));
+         String cadena3 = cadena2.replace(" ","");
+        System.out.println(cadena3.toUpperCase().replace("*", ""));
     }
 
 }
